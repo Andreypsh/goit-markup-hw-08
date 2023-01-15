@@ -1,0 +1,118 @@
+.page-hero {
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 118px;
+  padding-bottom: 118px;
+  background-color: $footer-bg-color;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+ 
+  
+  @include desktop{
+    padding-top: 200px;
+    padding-bottom: 200px;
+    max-width: 1600px;
+  }
+  
+  background-image: linear-gradient(
+        to right,
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/heromob.jpg);
+
+      @include retina(){
+  background-image: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+  ),
+  url(../images/heromob2x.jpg);
+}
+
+@include tablet(481px){
+  background-image: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+  ),
+  url(../images/herotab.jpg);
+
+@include retina(){
+  background-image: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+  ),
+  url(../images/herotab2x.jpg);
+}
+}
+
+@include tablet(769px){
+  background-image: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+  ),
+  url(../images/herodesk.jpg);
+
+@include retina(){
+  background-image: linear-gradient(
+    to right,
+    rgba(47, 48, 58, 0.4),
+    rgba(47, 48, 58, 0.4)
+  ),
+  url(../images/herodesk2x.jpg);
+}
+}
+}
+  
+  .page-hero__title {
+    margin-top: 0;
+    margin-bottom: 30px;
+  
+    color: $white-color;
+  
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.61;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    @include desktop {
+      font-size: 26px;
+      line-height: 1.6px; 
+    }
+
+    @include desktop{
+      font-size:44px;
+      line-height: 1.36 ;
+    }
+  }
+  .page-hero__button {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 4px;
+    min-width: 200px;
+    border: none;
+  
+    background-color: $accent-color;
+    color: $white-color;
+    cursor: pointer;
+  
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+  
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,&:focus{
+    background-color: $button-bg-hero-color;
+    color: $white-color;
+  }
+  }

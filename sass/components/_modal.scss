@@ -1,0 +1,260 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: scroll;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  /* visibility: hidden; */
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 350px;
+  min-height: 409px;
+  text-align: center;
+  background-color: $white-color;
+padding: 40px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+
+    @include mobile(){
+      min-width: 455px;
+      min-height: 609px;
+    }
+@include desktop{
+  min-width: 528px;
+  min-height: 581px;
+}
+}
+.modal__button {
+  display: block;
+  position: absolute;
+  right: 0;
+  margin: 8px 8px;
+  top: 0;
+  background-color: none;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: $black-color;
+
+}
+.modal__button--close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  fill: currentColor;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+&:hover{
+  color: $accent-color;
+}
+}
+
+
+.form-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  color: $title-text-color;
+  margin-bottom: 28px;
+  margin-top: 0;
+}
+
+.form-feild {
+  position: relative;
+  margin-bottom: 28px;
+  margin-top: 0;
+  color: $title-text-color;
+}
+
+
+.form-feild__input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 42px;
+  color: $title-text-color;
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+&:focus{
+  border-color: $accent-color;
+}
+&:focus ~ .form-feild__icon {
+  color: $accent-color;
+}
+}
+
+input {
+  outline: none;
+}
+
+
+textarea {
+  outline: none;
+}
+
+.form-textarea {
+  position: relative;
+  margin-top: 0;
+}
+
+.form-textarea__coment {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus{
+    border-color: $accent-color;
+    }
+}
+.form-textarea__coment::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+  font-size: 12px;
+  line-height: 1.67;
+
+}
+
+
+.form-feild__icon {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  height: 14px;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-feild__label {
+  position: absolute;
+  top: -18px;
+  left: 0;
+  font-size: 12px;
+  line-height: 1.17;
+  color: $primary-text-color;
+}
+
+
+.form-checkbox {
+  display: flex;
+  margin-bottom: 30px;
+}
+.form-checkbox__link {
+  display: block;
+  margin-left: 5px;
+  color: rgba(33, 150, 243, 1);
+  font-size: 12px;
+  line-height: 1.17;
+
+  @include desktop{
+    font-size: 14px;
+    line-height: 1.17;
+  }
+}
+.form-checkbox__choice {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+
+ &:checked + .form-checkbox__icon {
+    border-color: $accent-color;
+    background-color: $accent-color;
+    background-image: url(../images/check1.svg);
+    background-size: contain;
+    background-origin: border-box;
+  }
+  
+ 
+}
+
+.form-checkbox__label {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.form-checkbox__icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid rgba(33, 33, 33, 1);
+  border-radius: 2px;
+  margin-right: 7px;
+  border-color: $title-text-color;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 12px;
+    line-height: 1.17;
+
+    @include desktop{
+      font-size: 14px;
+      line-height: 1.17;
+    }
+}
+
+
+
+.form-modal__button {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 4px;
+  min-width: 200px;
+  border: none;
+
+  background-color: $accent-color;
+  color: $white-color;
+  cursor: pointer;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+&:hover,&:focus{
+  background-color: $button-bg-hero-color;
+  color: $white-color;
+}
+}
