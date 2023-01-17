@@ -18,20 +18,22 @@
     font-weight: 700;
     font-size: 28px;
     line-height: 1.17;
+
+    @include desktop{
+      font-size: 36px;
+      line-height: 1.17px;
+    }
+  
   }
   
   .client__list {
 @extend %list;
 display: flex;
-gap: 30px;
-@media screen and (max-width:1199px){
 display: flex;
 flex-wrap: wrap;
-
+gap: 30px;
 @include desktop{
   font-size: 36px;
-
-  }
 }
 }
 
@@ -59,7 +61,7 @@ flex-wrap: wrap;
      
 @include desktop{
   width: calc((100% - 5*30px)/6);
-        margin-right: 30px;
+
 }
    &:last-child{
           margin-right: 0;
